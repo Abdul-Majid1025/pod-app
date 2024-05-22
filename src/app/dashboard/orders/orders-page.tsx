@@ -5,6 +5,8 @@ import dayjs from 'dayjs';
 import { DataTable } from '../../../components/common/data-table';
 import { ColumnConfig } from '../../../types/data-table';
 import { MainNav } from '../../../components/dashboard/layout/main-nav';
+import { EyeIcon } from '../../../icons/eye-icon';
+import { useNavigate } from 'react-router-dom';
 
 interface Order {
   id: string,
@@ -19,6 +21,7 @@ interface Order {
 
 
 export const OrdersPage = () => {
+  const navigate = useNavigate();
 
   const statusMap = {
     pending: { label: 'Pending', color: 'warning' },
@@ -53,6 +56,11 @@ export const OrdersPage = () => {
     {
       label: 'Driver',
       render: (order) => order.driver,
+    },
+    {
+      label: '',
+      render: (image) => <EyeIcon onClick={() => navigate('/order')} />,
+      width: '50px'
     },
   ];
 
@@ -122,13 +130,14 @@ export const OrdersPage = () => {
   return (
     <Box>
       <MainNav>
-        <DashboardHeader />
+        <DashboardHeader type='orders' />
       </MainNav>
       <DataTable
         data={orders}
         sx={{ height: '100%', borderRadius: '8px', marginTop: '32px' }}
         columns={columns}
         selection={true}
+        pagination={true}
       />
     </Box>
   );

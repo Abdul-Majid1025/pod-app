@@ -19,9 +19,8 @@ export interface PieChartProps {
 }
 
 export function PieChart({ chartSeries, labels, sx, title }: PieChartProps): React.JSX.Element {
-  const theme = useTheme();
   const Chart = styled(ApexChart)``;
-  const colors = [theme.palette.primary.main, theme.palette.success.main, theme.palette.warning.main];
+  const colors = ['#08A765', '#1070CA', '#EC4C47'];
   const chartOptions = useChartOptions(labels, colors);
 
   return (

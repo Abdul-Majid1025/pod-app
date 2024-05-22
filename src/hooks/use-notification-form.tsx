@@ -19,7 +19,7 @@ export const useNotificationsForm = (): FormField[] => {
     {
       name: 'description',
       label: 'Description',
-      render: (props: BoxProps) => <Box component="textarea" {...props} sx={{ ...formFieldStyle, fontFamily: 'Inter', fontSize: '14px', width: '100%', height: 'auto', resize: 'none' }} rows={16} placeholder="Enter description" />,
+      render: (props: BoxProps) => <Box component="textarea" {...props} sx={{ ...formFieldStyle, fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"', fontSize: '14px', width: '100%', height: 'auto', resize: 'none' }} rows={16} placeholder="Enter description" />,
       defaultValue: ''
     },
     {

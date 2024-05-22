@@ -16,7 +16,7 @@ export function StatsCard(props: StatsCardProps): React.JSX.Element {
         <Stack spacing={3}>
           <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }} spacing={3}>
             <Stack spacing={1}>
-              <Typography color="text.secondary" variant="overline">
+              <Typography color="text.secondary" variant="overline" sx={{ textTransform: 'none', fontSize: '16px !important', lineHeight: '24px' }}>
                 {text}
               </Typography>
               <Typography variant="h4">{value}</Typography>

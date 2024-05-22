@@ -266,10 +266,124 @@ export const DriverVehiclesPage = () => {
       vehicle: 'Ford F-150',
       status: 'disable',
       lastLogin: new Date('2024-05-15T12:45:00Z')
+    },
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+      userId: 1,
+      pin: 1234,
+      vehicle: 'Toyota Corolla',
+      status: 'online',
+      lastLogin: new Date('2024-05-17T08:00:00Z')
+    },
+    {
+      firstName: 'Alice',
+      lastName: 'Smith',
+      userId: 2,
+      pin: 5678,
+      vehicle: 'Honda Civic',
+      status: 'offline',
+      lastLogin: new Date('2024-05-16T10:30:00Z')
+    },
+    {
+      firstName: 'Bob',
+      lastName: 'Johnson',
+      userId: 3,
+      pin: 2468,
+      vehicle: 'Ford F-150',
+      status: 'disable',
+      lastLogin: new Date('2024-05-15T12:45:00Z')
+    },
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+      userId: 1,
+      pin: 1234,
+      vehicle: 'Toyota Corolla',
+      status: 'online',
+      lastLogin: new Date('2024-05-17T08:00:00Z')
+    },
+    {
+      firstName: 'Alice',
+      lastName: 'Smith',
+      userId: 2,
+      pin: 5678,
+      vehicle: 'Honda Civic',
+      status: 'offline',
+      lastLogin: new Date('2024-05-16T10:30:00Z')
+    },
+    {
+      firstName: 'Bob',
+      lastName: 'Johnson',
+      userId: 3,
+      pin: 2468,
+      vehicle: 'Ford F-150',
+      status: 'disable',
+      lastLogin: new Date('2024-05-15T12:45:00Z')
     }
   ];
 
   const vehicles: Vehicle[] = [
+    {
+      id: 1,
+      registration: 'ABC123',
+      make: 'Toyota',
+      model: 1234,
+      lastDriver: 1,
+      lastLocation: 'New York',
+      status: 'online',
+      lastLogin: new Date('2024-05-17T08:00:00Z')
+    },
+    {
+      id: 2,
+      registration: 'XYZ789',
+      make: 'Honda',
+      model: 1234,
+      lastDriver: 2,
+      lastLocation: 'Los Angeles',
+      status: 'offline',
+      lastLogin: new Date('2024-05-16T10:30:00Z')
+    },
+    {
+      id: 3,
+      registration: 'DEF456',
+      make: 'Ford',
+      model: 1234,
+      lastDriver: 3,
+      lastLocation: 'Chicago',
+      status: 'disable',
+      lastLogin: new Date('2024-05-15T12:45:00Z')
+    },
+    {
+      id: 1,
+      registration: 'ABC123',
+      make: 'Toyota',
+      model: 1234,
+      lastDriver: 1,
+      lastLocation: 'New York',
+      status: 'online',
+      lastLogin: new Date('2024-05-17T08:00:00Z')
+    },
+    {
+      id: 2,
+      registration: 'XYZ789',
+      make: 'Honda',
+      model: 1234,
+      lastDriver: 2,
+      lastLocation: 'Los Angeles',
+      status: 'offline',
+      lastLogin: new Date('2024-05-16T10:30:00Z')
+    },
+    {
+      id: 3,
+      registration: 'DEF456',
+      make: 'Ford',
+      model: 1234,
+      lastDriver: 3,
+      lastLocation: 'Chicago',
+      status: 'disable',
+      lastLogin: new Date('2024-05-15T12:45:00Z')
+    },
     {
       id: 1,
       registration: 'ABC123',
@@ -324,7 +438,7 @@ export const DriverVehiclesPage = () => {
   return (
     <Box>
       <MainNav>
-        <DashboardHeader />
+        <DashboardHeader type='driver' />
       </MainNav>
       <Grid container spacing={3} sx={{ marginTop: '10px' }}>
         {stats?.map((stat) =>
@@ -357,11 +471,13 @@ export const DriverVehiclesPage = () => {
           data={drivers}
           sx={{ height: '100%', borderRadius: '8px', marginTop: '32px' }}
           columns={driverColumns}
+          pagination={true}
         /> :
         <DataTable
           data={vehicles}
           sx={{ height: '100%', borderRadius: '8px', marginTop: '32px' }}
           columns={vehicleColumns}
+          pagination={true}
         />}
       <FormDialogHandler dialogData={dialog} setOpenFormDialog={handleOpenFormDialog} />
       <TextDialogHandler dialogData={textDialog} setOpenFormDialog={handleOpenTextDialog} />

@@ -72,7 +72,7 @@ export const OrderDetailPage = () => {
       value: 'Delivered',
     },
     {
-      title: 'Date of Delivery',
+      title: 'Date Of Delivery',
       value: '09-03-23',
     },
     {
@@ -114,7 +114,7 @@ export const OrderDetailPage = () => {
   return (
     <Box>
       <MainNav>
-        <DashboardHeader />
+        <DashboardHeader type='orderDetail' />
       </MainNav>
       <Grid container spacing={3} sx={{ marginTop: '10px' }}>
         {stats?.map((stat) =>

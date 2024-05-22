@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
-  Route, Routes
+  Route, Routes,
+  Navigate
 } from 'react-router-dom';
 import Layout from './app/dashboard/layout';
 import { ThemeProvider } from './components/core/theme-provider/theme-provider';
@@ -14,25 +15,34 @@ import { NotificationsPage } from './app/dashboard/notifications/notifications-p
 import { IntegrationsPage } from './app/dashboard/integrations/integrations-page';
 import { Box } from '@mui/material';
 import { ChatPage } from './app/dashboard/chat/chat-page';
+import SignUpPage from './app/auth/sign-up/signup-page';
+import SignInPage from './app/auth/sign-in/signin-page';
+import ResetPasswordPage from './app/auth/reset-password/reset-password-page';
+import ForgetPasswordPage from './app/auth/forget-password/forget-password-page';
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
-        <Layout>
-          <Routes>
-            <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/orders" element={<OrdersPage />} />
-            <Route path="/drivers" element={<DriverVehiclesPage />} />
-            <Route path="/integrations" element={<IntegrationsPage />} />
-            <Route path="/reports" element={<Box />} />
-            <Route path="/users" element={<Box />} />
-            <Route path="/download" element={<Box />} />
-            <Route path="/notifications" element={<NotificationsPage />} />
-            <Route path="/chat" element={<ChatPage />} />
-            <Route path="/order" element={<OrderDetailPage />} />
-          </Routes>
-        </Layout>
+        {/* <Layout> */}
+        <Routes>
+          <Route path="/" element={<Navigate to="/signin" replace />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/resetpassword" element={<ResetPasswordPage />} />
+          <Route path="/forgetpassword" element={<ForgetPasswordPage />} />
+          <Route path="/dashboard" element={<Layout><DashboardPage /></Layout>} />
+          <Route path="/orders" element={<Layout><OrdersPage /></Layout>} />
+          <Route path="/drivers" element={<Layout><DriverVehiclesPage /></Layout>} />
+          <Route path="/integrations" element={<Layout><IntegrationsPage /></Layout>} />
+          <Route path="/reports" element={<Layout><Box /></Layout>} />
+          <Route path="/users" element={<Layout><Box /></Layout>} />
+          <Route path="/download" element={<Layout><Box /></Layout>} />
+          <Route path="/notifications" element={<Layout><NotificationsPage /></Layout>} />
+          <Route path="/chat" element={<Layout><ChatPage /></Layout>} />
+          <Route path="/order" element={<Layout><OrderDetailPage /></Layout>} />
+        </Routes>
+        {/* </Layout> */}
       </Router>
     </ThemeProvider >
   );

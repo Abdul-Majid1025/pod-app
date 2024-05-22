@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
-import { alpha, styled, useTheme } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import type { SxProps } from '@mui/material/styles';
 import type { ApexOptions } from 'apexcharts';
 import ApexChart from 'react-apexcharts';
@@ -16,8 +16,7 @@ export interface BarGraphProps {
 }
 
 export function BarGraph({ title, chartSeries, sx }: BarGraphProps): React.JSX.Element {
-  const theme = useTheme();
-  const colors = [theme.palette.primary.main, alpha(theme.palette.primary.main, 0.25)]
+  const colors = ['#1665D8', '#EDF0F2'];
   const chartOptions = useChartOptions(colors);
   const Chart = styled(ApexChart)``;
 

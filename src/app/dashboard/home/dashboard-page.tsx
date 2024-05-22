@@ -147,7 +147,7 @@ export const DashboardPage = () => {
   return (
     <Box>
       <MainNav>
-        <DashboardHeader />
+        <DashboardHeader type='dashboard' />
       </MainNav>
       <Grid container spacing={3} sx={{ marginTop: '10px' }}>
         {stats?.map((stat) =>
@@ -173,6 +173,7 @@ export const DashboardPage = () => {
             sx={{ height: '100%', borderRadius: '8px' }}
             columns={columns}
             selection={true}
+            pagination={true}
           />
         </Grid>
       </Grid>

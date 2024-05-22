@@ -8,7 +8,12 @@ export const getStatsIcon = (type: string) => {
         return '/not-delivered-icon.png';
       case 'Total Drivers':
       case 'Online Drivers':
+      case 'Driver':
         return '/driver-icon.png';
+      case 'Date Of Delivery':
+        return '/calender-icon.png';
+      case 'Signed By':
+        return 'signatured-icon.png';
       default:
         return '/vehicle-icon.png';
     }

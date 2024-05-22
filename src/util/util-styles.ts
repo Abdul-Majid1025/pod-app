@@ -4,7 +4,8 @@ export const outlineBtnStyles = {
   border: '1px solid #EAECF0',
   padding: '10px 16px',
   backgroundColor: 'white',
-  color: '#344054'
+  color: '#344054',
+  whiteSpace: 'nowrap'
 }
 
 export const formFieldStyle = {
