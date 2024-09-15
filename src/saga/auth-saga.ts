@@ -7,9 +7,9 @@ function* incrementAsync(action: ReturnType<typeof incrementByAmountAsync>) {
   yield put(incrementByAmount(action.payload));
 }
 
-function* watchIncrementAsync() {
-  yield takeEvery(incrementByAmountAsync.type, incrementAsync);
-}
+// function* watchIncrementAsync() {
+//   yield takeEvery(incrementByAmountAsync.type, incrementAsync);
+// }
 
 export default function* authSaga() {
   yield takeEvery( increment.type, incrementAsync);
