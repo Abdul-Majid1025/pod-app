@@ -27,7 +27,6 @@ function App() {
     <Provider store={store}>
       <ThemeProvider>
         <Router>
-          {/* <Layout> */}
           <Routes>
             <Route path="/" element={<Navigate to="/signin" replace />} />
             <Route path="/signup" element={<SignUpPage />} />
